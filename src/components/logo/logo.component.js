@@ -5,7 +5,7 @@ import React from 'react';
 
 export const Logo = () => {
   return (
-    <div className='logo-container'>
+    <div className='logo'>
       <img className='logo' src={logo} alt="Lambda's logo" />
     </div>
   );

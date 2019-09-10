@@ -3,5 +3,9 @@ import React from 'react';
 
 export const NumberButton = props => {
   const { text, onClick } = props;
-  return <button onClick={() => onClick({ value: text })}>{text}</button>;
+  return (
+    <button className={`number-btn number-${text}`} onClick={() => onClick({ value: text })}>
+      {text}
+    </button>
+  );
 };

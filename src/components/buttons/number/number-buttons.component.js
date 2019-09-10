@@ -6,5 +6,11 @@ import { numbers } from '../../../data';
 
 export const NumberButtons = props => {
   const { onClick } = props;
-  return numbers.map(number => <NumberButton key={number} text={number} onClick={onClick} />);
+  return (
+    <div className='number-btns'>
+      {numbers.map(number => (
+        <NumberButton key={number} text={number} onClick={onClick} />
+      ))}
+    </div>
+  );
 };

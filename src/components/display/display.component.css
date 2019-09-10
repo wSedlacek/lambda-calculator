@@ -1,14 +1,12 @@
 .display {
-  margin-top: 25px;
-  height: 100px;
-  width: 450px;
+  display: flex;
   border-radius: 50px;
   color: white;
   background-color: #322c2d;
   box-shadow: 1px 1px #322c2d;
-  display: flex;
   justify-content: flex-end;
-  align-items: flex-end;
+  align-items: center;
   padding-right: 8%;
-  font-size: 5rem;
+  font-size: 3rem;
+  overflow: hidden;
 }

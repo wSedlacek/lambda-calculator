@@ -6,5 +6,11 @@ import { SpecialButton } from './components/special-button/special-button.compon
 
 export const SpecialButtons = props => {
   const { onClick } = props;
-  return specials.map(special => <SpecialButton key={special} text={special} onClick={onClick} />);
+  return (
+    <div className='special-btns'>
+      {specials.map(special => (
+        <SpecialButton key={special} text={special} onClick={onClick} />
+      ))}
+    </div>
+  );
 };

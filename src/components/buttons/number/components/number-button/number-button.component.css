@@ -1,1 +1,9 @@
 @import url('../../../buttons.component.css');
+
+.number-btn {
+  background-color: #174d83;
+}
+
+.number-0 {
+  width: 180px;
+}
