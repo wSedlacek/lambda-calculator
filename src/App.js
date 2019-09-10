@@ -11,19 +11,53 @@ import { OperatorButtons } from './components/buttons/operator/operator-buttons.
 import { SpecialButtons } from './components/buttons/specials/special-buttons.component';
 
 function App() {
-  const [display, setDisplay] = useState('');
+  const [display, setDisplay] = useState(0);
+  const [storedVal, setStoredVal] = useState('');
+  const [storedOperation, setStoredOperation] = useState('');
 
-  const appendDisplay = e => {
-    setDisplay(display + e.value);
+  const numberBtn = e => {
+    if (display === 0) setDisplay(() => '');
+    if (storedVal) setDisplay(() => '');
+    setDisplay(display => display + e.value);
+  };
+
+  const specialBtn = e => {
+    switch (e.value) {
+      case 'C':
+        setDisplay(0);
+        setStoredVal('');
+        setStoredOperation('');
+        break;
+      case '+/-':
+        setDisplay(display => parseInt(display, 10) * -1);
+        break;
+      case '%':
+        setDisplay(display => `${parseInt(display, 10) / 100}`);
+        break;
+      default:
+        break;
+    }
+  };
+
+  const operatorBtn = e => {
+    if (storedOperation) {
+      setDisplay(display => eval(`${storedVal} ${storedOperation} ${display}`));
+      setStoredVal(storedVal => eval(`${storedVal} ${storedOperation} ${display}`));
+      setStoredOperation(e.value === '=' ? '' : e.value);
+    } else if (e.value !== '=') {
+      setStoredVal(parseInt(display, 10));
+      setDisplay(0);
+      setStoredOperation(e.value);
+    }
   };
 
   return (
     <div className='App'>
       <Logo />
       <Display display={display} />
-      <NumberButtons onClick={appendDisplay} />
-      <OperatorButtons onClick={console.log} />
-      <SpecialButtons onClick={console.log} />
+      <NumberButtons onClick={numberBtn} />
+      <OperatorButtons onClick={operatorBtn} />
+      <SpecialButtons onClick={specialBtn} />
     </div>
   );
 }
