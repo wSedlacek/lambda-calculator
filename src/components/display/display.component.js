@@ -1,3 +1,4 @@
+import './display.component.css';
 import React from 'react';
 
 export const Display = props => {

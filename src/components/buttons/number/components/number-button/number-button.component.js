@@ -1,6 +1,7 @@
+import './number-button.component.css';
 import React from 'react';
 
-export const SpecialButton = props => {
+export const NumberButton = props => {
   const { text, onClick } = props;
   return <button onClick={() => onClick({ value: text })}>{text}</button>;
 };

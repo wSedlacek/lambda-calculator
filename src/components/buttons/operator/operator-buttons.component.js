@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { OperatorButton } from './OperatorButton';
+import { OperatorButton } from './components/operator-button/operator-button.component';
 
 import { operators } from '../../../data';
 
-export const Operators = props => {
+export const OperatorButtons = props => {
   const { onClick } = props;
   return operators.map(operator => (
     <OperatorButton

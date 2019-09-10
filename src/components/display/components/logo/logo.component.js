@@ -1,6 +1,7 @@
-import React from 'react';
+import './logo.component.css';
+import logo from './lambda.png';
 
-import logo from '../../Img/Lambda_Logo_white.png';
+import React from 'react';
 
 export const Logo = () => {
   return (

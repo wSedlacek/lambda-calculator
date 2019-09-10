@@ -1,3 +1,4 @@
+import './operator-button.component.css';
 import React from 'react';
 
 export const OperatorButton = props => {

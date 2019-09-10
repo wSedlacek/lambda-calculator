@@ -3,12 +3,12 @@ import './App.css';
 import React from 'react';
 import { useState } from 'react';
 
-import { Logo } from './components/DisplayComponents/Logo';
-import { Display } from './components/DisplayComponents/Display';
+import { Logo } from './components/display/components/logo/logo.component';
+import { Display } from './components/display/display.component';
 
-import { Numbers } from './components/ButtonComponents/NumberButtons/Numbers';
-import { Operators } from './components/ButtonComponents/OperatorButtons/Operators';
-import { Specials } from './components/ButtonComponents/SpecialButtons/Specials';
+import { NumberButtons } from './components/buttons/number/number-buttons.component';
+import { OperatorButtons } from './components/buttons/operator/operator-buttons.component';
+import { SpecialButtons } from './components/buttons/specials/special-buttons.component';
 
 function App() {
   // STEP 5 - After you get the components displaying using the provided data file, write your state hooks here.
@@ -29,9 +29,9 @@ function App() {
       <Logo />
       <Display display={display} />
       <div className='App'>
-        <Numbers onClick={buttonPress} />
-        <Operators onClick={buttonPress} />
-        <Specials onClick={buttonPress} />
+        <NumberButtons onClick={buttonPress} />
+        <OperatorButtons onClick={buttonPress} />
+        <SpecialButtons onClick={buttonPress} />
       </div>
     </div>
   );
