@@ -1,11 +1,17 @@
 import React from 'react';
-import { useState } from 'react';
-
-import { operators } from '../../../data';
 
 import { OperatorButton } from './OperatorButton';
 
-export const Operators = () => {
-  const [_operators] = useState(operators);
-  return _operators.map(operator => <OperatorButton text={operator.char} key={operator.char} />);
+import { operators } from '../../../data';
+
+export const Operators = props => {
+  const { onClick } = props;
+  return operators.map(operator => (
+    <OperatorButton
+      key={operator.char}
+      text={operator.char}
+      value={operator.value}
+      onClick={onClick}
+    />
+  ));
 };

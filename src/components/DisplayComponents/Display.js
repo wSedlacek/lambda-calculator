@@ -1,5 +1,6 @@
 import React from 'react';
 
 export const Display = props => {
-  return <div className='display'>{/* Display any props data here */}</div>;
+  const { display } = props;
+  return <div className='display'>{display}</div>;
 };

@@ -1,5 +1,7 @@
-import React from 'react';
 import './App.css';
+
+import React from 'react';
+import { useState } from 'react';
 
 import { Logo } from './components/DisplayComponents/Logo';
 import { Display } from './components/DisplayComponents/Display';
@@ -15,14 +17,21 @@ function App() {
   // the "5" button, or the operator if they click one of those buttons) and then call your setter function to update state.
   // Don't forget to pass the functions (and any additional data needed) to the components as props
 
+  const displayHook = useState('');
+  const [display, setDisplay] = displayHook;
+
+  const buttonPress = e => {
+    setDisplay(display + e.value);
+  };
+
   return (
     <div className='container'>
       <Logo />
-      <Display />
+      <Display display={display} />
       <div className='App'>
-        <Numbers />
-        <Operators />
-        <Specials />
+        <Numbers onClick={buttonPress} />
+        <Operators onClick={buttonPress} />
+        <Specials onClick={buttonPress} />
       </div>
     </div>
   );
