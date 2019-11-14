@@ -1,0 +1,5 @@
+@import url('../../../buttons.component.css');
+
+.special-btn {
+  background-color: #1f68a5;
+}

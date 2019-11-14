@@ -1,22 +1,58 @@
-.container {
-    background-color: #c00025;
-    width: 100%;
-    max-width: 550px;
-    border-radius: 15px;
-    border: 2px solid grey;
-    padding-bottom: 25px;
+* {
+  box-sizing: border-box;
+  max-width: 100%;
 }
+
+.App {
+  width: 465px;
+  background-color: #b32b41;
+
+  padding: 25px;
+
+  border-radius: 15px;
+  border: 2px solid grey;
+
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-gap: 8px;
+  grid-template:
+    'logo . . .' 54px
+    'display display display display' 90px
+    'special-btns special-btns special-btns operators-btns' 90px
+    'number-btns number-btns number-btns operators-btns' 90px
+    'number-btns number-btns number-btns operators-btns' 90px
+    'number-btns number-btns number-btns operators-btns' 90px
+    'number-btns number-btns number-btns operators-btns' 90px;
+}
+
+.logo {
+  grid-area: logo;
+}
+
 .display {
-    margin-top: 25px;
-    height: 100px;
-    width: 450px;
-    border-radius: 50px;
-    color: white;
-    background-color: #322c2d;
-    box-shadow: 1px 1px #322c2d;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    padding-right: 8%;
-    font-size: 5.0rem;
-  }
+  grid-area: display;
+}
+
+.number-btns {
+  grid-area: number-btns;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.operator-btns {
+  grid-area: operators-btns;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.special-btns {
+  grid-area: special-btns;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}

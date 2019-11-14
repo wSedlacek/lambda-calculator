@@ -1,0 +1,5 @@
+@import url('../../../buttons.component.css');
+
+.operator-btn {
+  background-color: #1f7d9c;
+}
